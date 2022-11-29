@@ -33,8 +33,9 @@ And vlc is used to play it
 ## Why?
 Graphics on a plain tty look awsome!!!!  
 ## Todo:
-- [ ] Add support for the kitty terminal to preview thumbnail
+- [X] Add support for the kitty terminal to preview thumbnail
 - [ ] Add somekind of "history" or "save video" mechanic
+- [ ] Known bug: youtube-dl may not download a video sometimes
 # Credit (for some AWSOME dependencies):
 - youtube-dl (Its amazing)
 - vlc (mindblowing)
