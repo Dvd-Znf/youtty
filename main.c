@@ -5,7 +5,7 @@
 #include<unistd.h>
 
 
-char target[255],data[12];
+char target[255],data[12],home[256];
 bool kitten=false;
 FILE *ptrf;
 
@@ -15,7 +15,8 @@ static char helpstr[] = "\n"
 		    	"Download video from target and they play it via vlc\n"
 		    	"\n"
 		    	"Posible command options:\n"
-		    	"		        -h | --help : Display this message\n"
+		    	"		        -h | --help  : Display this message\n"
+                "		        -k | --kitty : Preview thumbnail if you have kitty\n"
 		    	"\n"
 		    	"Examples:\n"
 		    	"	youtty 'Bad Apple'	Download and watch Bad Apple!!\n"
@@ -31,12 +32,25 @@ int main(int argc, char *argv[]){
         if(!strcmp(argv[i],"-h") || !strcmp(argv[i],"--help")){
             printf("%s",helpstr); 
             return 0;
+        } else if(!strcmp(argv[i],"-k") || !strcmp(argv[i],"--kitty")) {
+            kitten=true;
         } else {
             strcpy(target,argv[i]);
         }
     }
     
-    char python_caller[255] = "python ~/.youtty/api-caller.py ",home[255];
+    if(kitten==true){
+        FILE *kitten_ptr;
+        strcpy(home, getenv("HOME"));
+        kitten_ptr=fopen(strcat(home,"/.youtty/data/kitten"),"w");
+        if(kitten_ptr==NULL){
+            printf("Err: Couldn't allocate file pointer!\n(Have you ran the install.sh script?)");
+        }
+        fprintf(kitten_ptr,"1");
+        fclose(kitten_ptr);
+    }
+
+    char python_caller[255] = "python ~/.youtty/api-caller.py ";
     strcpy(home, getenv("HOME"));
 
     strcat(python_caller,"'");
