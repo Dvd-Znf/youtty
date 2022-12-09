@@ -11,7 +11,7 @@ Youtty is a simple program that combines: Youtube Data API, youtube-dl and vlc t
 Clone this repo :P  
 ### Step 1:
 Run the install.sh script;  
-The automated script will create necesary data directories  
+The automated script will create necessary data directories  
 But it will also compile the main.c file from source
 ```
 $ ./install.sh  
