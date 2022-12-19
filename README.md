@@ -1,6 +1,7 @@
 # youtty
 ## Watch youtube from the tty
 Youtty is a simple program that combines: Youtube Data API, youtube-dl and vlc to allow you to easily watch youtube videos from the tty  
+![Screenshot](/Screenshot.png)  
 ## Dependencies:  
 - python  
 - youtube-dl  
