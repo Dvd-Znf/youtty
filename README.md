@@ -1,10 +1,10 @@
 # youtty
 ## Watch youtube from the tty
-Youtty is a simple program that combines: Youtube Data API, youtube-dl and vlc to allow you to easily watch youtube videos from the tty  
+Youtty is a simple program that combines: Youtube Data API, yt-dlp and vlc to allow you to easily watch youtube videos from the tty  
 ![Screenshot](/Screenshot.png)  
 ## Dependencies:  
 - python  
-- youtube-dl  
+- yt-dlp  
 - vlc  
 - make and gcc (Build dependencies)  
 ## How to install (from source):
@@ -29,16 +29,16 @@ Creating a youtube data key is 100% free and very simple (Google is your friend!
 The main.c file is really just a glorified script  
 It will call to the api-caller.py file located under ~/.youtty to then asks the youtube data api for a specific search result  
 It will then trow that into a file  
-After that youtube-dl downloads the video  
+After that yt-dlp downloads the video  
 And vlc is used to play it  
 ## Why?
 Graphics on a plain tty look awsome!!!!  
 ## Todo:
-- [X] Add support for the kitty terminal to preview thumbnail
-- [ ] Add somekind of "history" or "save video" mechanic
-- [ ] Known bug: youtube-dl may not download a video sometimes
+- [ ] Colorfull output  
+- [ ] Better support for yt-dlp features  
+- [ ] Add somekind of "history" or "save video" mechanic  
 # Credit (for some AWSOME dependencies):
-- youtube-dl (Its amazing)
+- youtube-dl && yt-dlp (Its amazing)
 - vlc (mindblowing)
   
 Please open an issue in case you find one  

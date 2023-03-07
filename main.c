@@ -69,15 +69,15 @@ int main(int argc, char *argv[]){
     fgets(data,12,ptrf);
     fclose(ptrf);
 
-    char youtube_dl_caller[255] = "youtube-dl --format mp4 -o ~/.youtty/data/content https://www.youtube.com/watch?v=";
+    char youtube_dl_caller[255] = "yt-dlp --format mp4 -o ~/.youtty/data/content https://www.youtube.com/watch?v=";
     strcat(youtube_dl_caller,data);
     system(youtube_dl_caller);
 
-    printf("Youtube-dl finished doing it's thing!\n");
+    printf("yt-dlp finished doing it's thing!\n");
 
     strcpy(home, getenv("HOME"));
     if(access(strcat(home,"/.youtty/data/content"),F_OK)!=0){
-        printf("Err: Downloaded video dosen't exist!\n(Maybe youtube-dl failled?)\n");
+        printf("Err: Downloaded video dosen't exist!\n(Maybe yt-dlp failled?)\n");
         exit(1);
     }
 
