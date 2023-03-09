@@ -83,7 +83,9 @@ int main(int argc, char *argv[]){
 
     printf("Everything looks good!\nUsing cvlc to view content...\n");
     system("cvlc ~/.youtty/data/content");
+    system("rm ~/.youtty/data/content");
 
+    
     printf("If you found any issues please post them on github\nThanks for using my program <3\n");
 
     return 0;
