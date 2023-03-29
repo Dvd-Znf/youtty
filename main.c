@@ -59,15 +59,23 @@ int main(int argc, char *argv[]){
 
     system(python_caller);
 
-    printf("Recived data from API\nUsing youtube-dl to temporarly download content\n");
-
     ptrf=fopen(strcat(home,"/.youtty/data/history"),"r");
+
     if(ptrf==NULL){
         printf("Err: Couldn't allocate file pointer!\n(Maybe API query failled?)\n");
         exit(1);
-    }   
+    }  
+    fseek(ptrf,0,SEEK_END);
+    if(ftell(ptrf)==0){
+        printf("Err: API Caller failed!\n(Maybe you didn't select a video?)\n");
+        fclose(ptrf);
+        exit(1);
+    }
+    fseek(ptrf,0,SEEK_SET);
     fgets(data,12,ptrf);
     fclose(ptrf);
+
+    printf("Recived data from API\nUsing youtube-dl to temporarly download content\n");
 
     char youtube_dl_caller[255] = "yt-dlp --format mp4 -o ~/.youtty/data/content https://www.youtube.com/watch?v=";
     strcat(youtube_dl_caller,data);
