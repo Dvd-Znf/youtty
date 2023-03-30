@@ -24,7 +24,7 @@ static char helpstr[] = "\n"
 
 int main(int argc, char *argv[]){
     if(argc==1){
-        printf("Err: expected some additional argument\n(You could use -h or --help to see a list)\n");
+        printf("\e[91mErr\e[0m: expected some additional argument\n(You could use -h or --help to see a list)\n");
         return(1);
     }
 
@@ -44,7 +44,7 @@ int main(int argc, char *argv[]){
         strcpy(home, getenv("HOME"));
         kitten_ptr=fopen(strcat(home,"/.youtty/data/kitten"),"w");
         if(kitten_ptr==NULL){
-            printf("Err: Couldn't allocate file pointer!\n(Have you ran the install.sh script?)");
+            printf("\e[91mErr\e[0m: Couldn't allocate file pointer!\n(Have you ran the install.sh script?)");
         }
         fprintf(kitten_ptr,"1");
         fclose(kitten_ptr);
@@ -62,12 +62,12 @@ int main(int argc, char *argv[]){
     ptrf=fopen(strcat(home,"/.youtty/data/history"),"r");
 
     if(ptrf==NULL){
-        printf("Err: Couldn't allocate file pointer!\n(Maybe API query failled?)\n");
+        printf("\e[91mErr\e[0m: Couldn't allocate file pointer!\n(Maybe API query failled?)\n");
         exit(1);
     }  
     fseek(ptrf,0,SEEK_END);
     if(ftell(ptrf)==0){
-        printf("Err: API Caller failed!\n(Maybe you didn't select a video?)\n");
+        printf("\e[91mErr\e[0m: API Caller failed!\n(Maybe you didn't select a video?)\n");
         fclose(ptrf);
         exit(1);
     }
@@ -85,7 +85,7 @@ int main(int argc, char *argv[]){
 
     strcpy(home, getenv("HOME"));
     if(access(strcat(home,"/.youtty/data/content"),F_OK)!=0){
-        printf("Err: Downloaded video dosen't exist!\n(Maybe yt-dlp failled?)\n");
+        printf("\e[91mErr\e[0m: Downloaded video dosen't exist!\n(Maybe yt-dlp failled?)\n");
         exit(1);
     }
 
@@ -94,7 +94,7 @@ int main(int argc, char *argv[]){
     system("rm ~/.youtty/data/content");
 
     
-    printf("If you found any issues please post them on github\nThanks for using my program <3\n");
+    printf("If you found any issues please post them on github\nThanks for using my program \e[91m<3\e[0m\n");
 
     return 0;
 }

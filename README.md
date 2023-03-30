@@ -34,7 +34,7 @@ And vlc is used to play it
 ## Why?
 Graphics on a plain tty look awsome!!!!  
 ## Todo:
-- [ ] Colorfull output  
+- [X] Colorfull output  
 - [ ] Better support for yt-dlp features  
 - [ ] Add somekind of "history" or "save video" mechanic  
 # Credit (for some AWSOME dependencies):
