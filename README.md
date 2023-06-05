@@ -28,7 +28,7 @@ Creating a youtube data key is 100% free and very simple (Google is your friend!
 ## How it works?
 The main.c file is really just a glorified script  
 It will call to the api-caller.py file located under ~/.youtty to then asks the youtube data api for a specific search result  
-It will then trow that into a file  
+It will then throw that into a file  
 After that yt-dlp downloads the video  
 And vlc is used to play it  
 ## Why?
