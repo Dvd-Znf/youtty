@@ -5,8 +5,10 @@
 #include<unistd.h>
 
 
-char target[255],data[12],home[256];
-bool kitten=false;
+char target[255],data[12],home[256],video_method_target[255];
+bool    kitten=false, 
+        video_method=false;
+
 FILE *ptrf;
 
 static char helpstr[] = "\n"
@@ -17,9 +19,11 @@ static char helpstr[] = "\n"
 		    	"Posible command options:\n"
 		    	"		        -h | --help  : Display this message\n"
                 "		        -k | --kitty : Preview thumbnail if you have kitty\n"
+                "		        -V | --vout  : Specify a valid vlc output method\n"
 		    	"\n"
 		    	"Examples:\n"
-		    	"	youtty 'Bad Apple'	Download and watch Bad Apple!!\n"
+		    	"	youtty 'Bad Apple'      	Download and watch Bad Apple!!\n"
+                "	youtty -V aa 'Bad Apple'	Download and watch Bad Apple!! in ascii art\n"
 		    	"\n";
 
 int main(int argc, char *argv[]){
@@ -34,6 +38,13 @@ int main(int argc, char *argv[]){
             return 0;
         } else if(!strcmp(argv[i],"-k") || !strcmp(argv[i],"--kitty")) {
             kitten=true;
+        } else if(!strcmp(argv[i],"-V") || !strcmp(argv[i],"--vout")) {
+            video_method=true;
+            if(i+1<argc){
+                strcpy(video_method_target,argv[i+1]);
+            } else {
+                printf("\e[91mErr\e[0m: expected some additional argument\n(Please specify a valid vlc output module\n)");
+            }
         } else {
             strcpy(target,argv[i]);
         }
@@ -90,10 +101,21 @@ int main(int argc, char *argv[]){
     }
 
     printf("Everything looks good!\nUsing cvlc to view content...\n");
-    system("cvlc ~/.youtty/data/content");
-    system("rm ~/.youtty/data/content");
 
+    if(video_method==false){
+        system("cvlc ~/.youtty/data/content");
+        system("rm ~/.youtty/data/content");
+    } else {
+        char output_method[255]="cvlc -V ";
+        strcat(output_method,video_method_target);
+        strcat(output_method," ~/.youtty/data/content");
+        system(output_method);
+        system("rm ~/.youtty/data/content");
+    }
     
+
+
+
     printf("If you found any issues please post them on github\nThanks for using my program \e[91m<3\e[0m\n");
 
     return 0;
