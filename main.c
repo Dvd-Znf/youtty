@@ -17,9 +17,10 @@ static char helpstr[] = "\n"
 		    	"Download video from target and they play it via vlc\n"
 		    	"\n"
 		    	"Posible command options:\n"
-		    	"		        -h | --help  : Display this message\n"
-                "		        -k | --kitty : Preview thumbnail if you have kitty\n"
-                "		        -V | --vout  : Specify a valid vlc output method\n"
+		    	"		        -h | --help    : Display this message\n"
+                "		        -k | --kitty   : Preview thumbnail if you have kitty\n"
+                "		        -v | --version : Print version and exit\n"
+                "		        -V | --vout    : Specify a valid vlc output method\n"
 		    	"\n"
 		    	"Examples:\n"
 		    	"	youtty 'Bad Apple'      	Download and watch Bad Apple!!\n"
@@ -35,6 +36,9 @@ int main(int argc, char *argv[]){
     for(int i=1;i<argc;i++){
         if(!strcmp(argv[i],"-h") || !strcmp(argv[i],"--help")){
             printf("%s",helpstr); 
+            return 0;
+        } else if(!strcmp(argv[i],"-v") || !strcmp(argv[i],"--version")) {
+            printf("youtty version: v0.1.0\n"); 
             return 0;
         } else if(!strcmp(argv[i],"-k") || !strcmp(argv[i],"--kitty")) {
             kitten=true;
