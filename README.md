@@ -36,7 +36,6 @@ Graphics on a plain tty look awsome!!!!
 ## Todo:
 - [X] Video method switch   
 - [X] Version switch
-- [ ] Use environment variables instead of silly files       
 - [ ] Better support for yt-dlp features  
 - [ ] Add somekind of "history" or "save video" mechanic  
 # Credit (for some AWSOME dependencies):
