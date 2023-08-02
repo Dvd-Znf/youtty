@@ -35,7 +35,6 @@ And vlc is used to play it
 Graphics on a plain tty look awsome!!!!  
 ## Todo:
 - [X] Video method switch   
-- [X] Version switch
 - [ ] Better support for yt-dlp features  
 - [ ] Add somekind of "history" or "save video" mechanic  
 # Credit (for some AWSOME dependencies):
