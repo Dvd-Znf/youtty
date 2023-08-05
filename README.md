@@ -23,7 +23,7 @@ $ chmod +x ./install.sh
 ```
 ### Step 2:
 Add your own youtube data api key to the ~/.youtty/key_name.py file  
-Creating a youtube data key is 100% free and very simple (Google is your friend!!!)  
+Creating a youtube data key is 100% free and very simple  
 (In the future i might add my own key for the public)  
 ## How it works?
 The main.c file is really just a glorified script  
