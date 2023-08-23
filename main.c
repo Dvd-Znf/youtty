@@ -7,7 +7,8 @@
 
 char target[255],data[12],home[256],video_method_target[255];
 bool    kitten=false, 
-        video_method=false;
+        video_method=false,
+        no_key=false;
 
 FILE *ptrf;
 
@@ -21,6 +22,7 @@ static char helpstr[] = "\n"
                 "		        -k | --kitty   : Preview thumbnail if you have kitty\n"
                 "		        -v | --version : Print version and exit\n"
                 "		        -V | --vout    : Specify a valid vlc output method\n"
+                "		        -n | --no-key  : Use the ytsearch integreated in yt-dlp instead\n"
 		    	"\n"
 		    	"Examples:\n"
 		    	"	youtty 'Bad Apple'      	Download and watch Bad Apple!!\n"
@@ -49,6 +51,8 @@ int main(int argc, char *argv[]){
             } else {
                 printf("\e[91mErr\e[0m: expected some additional argument\n(Please specify a valid vlc output module\n)");
             }
+        } else if(!strcmp(argv[i],"-n") || !strcmp(argv[i],"--no-key")) {
+            no_key=true;
         } else {
             strcpy(target,argv[i]);
         }
@@ -65,37 +69,52 @@ int main(int argc, char *argv[]){
         fclose(kitten_ptr);
     }
 
-    char python_caller[255] = "python ~/.youtty/api-caller.py ";
-    strcpy(home, getenv("HOME"));
+    if(no_key==true){
+        printf("Warning: --no-key flag detected!\nUsing yt-dlp ytsearch instead, this may lead to bad things happening\nBe ready to CTR+C\n");
+        system("sleep 1");
 
-    strcat(python_caller,"'");
-    strcat(python_caller,target);
-    strcat(python_caller,"'");
+        char youtube_dl_caller[255] = "yt-dlp --format mp4 -o ~/.youtty/data/content ytsearch:";
+        char tmp_data[255] = "'";
+        strcat(tmp_data,target);
+        strcat(tmp_data,"'");
+        strcat(youtube_dl_caller,tmp_data);
+        //printf(youtube_dl_caller);
+        system(youtube_dl_caller);
+    } else {
+        char python_caller[255] = "python ~/.youtty/api-caller.py ";
+        strcpy(home, getenv("HOME"));
 
-    system(python_caller);
+        strcat(python_caller,"'");
+        strcat(python_caller,target);
+        strcat(python_caller,"'");
 
-    ptrf=fopen(strcat(home,"/.youtty/data/history"),"r");
+        system(python_caller);
 
-    if(ptrf==NULL){
-        printf("\e[91mErr\e[0m: Couldn't allocate file pointer!\n(Maybe API query failled?)\n");
-        exit(1);
-    }  
-    fseek(ptrf,0,SEEK_END);
-    if(ftell(ptrf)==0){
-        printf("\e[91mErr\e[0m: API Caller failed!\n(Maybe you didn't select a video?)\n");
+        ptrf=fopen(strcat(home,"/.youtty/data/history"),"r");
+
+        if(ptrf==NULL){
+            printf("\e[91mErr\e[0m: Couldn't allocate file pointer!\n(Maybe API query failled?)\n");
+            exit(1);
+        }  
+        fseek(ptrf,0,SEEK_END);
+        if(ftell(ptrf)==0){
+            printf("\e[91mErr\e[0m: API Caller failed!\n(Maybe you didn't select a video?)\n");
+            fclose(ptrf);
+            exit(1);
+        }
+        fseek(ptrf,0,SEEK_SET);
+        fgets(data,12,ptrf);
         fclose(ptrf);
-        exit(1);
+
+        printf("Recived data from API\nUsing youtube-dl to temporarly download content\n");
+
+        char youtube_dl_caller[255] = "yt-dlp --format mp4 -o ~/.youtty/data/content https://www.youtube.com/watch?v=";
+        strcat(youtube_dl_caller,data);
+        system(youtube_dl_caller);
+
     }
-    fseek(ptrf,0,SEEK_SET);
-    fgets(data,12,ptrf);
-    fclose(ptrf);
 
-    printf("Recived data from API\nUsing youtube-dl to temporarly download content\n");
-
-    char youtube_dl_caller[255] = "yt-dlp --format mp4 -o ~/.youtty/data/content https://www.youtube.com/watch?v=";
-    strcat(youtube_dl_caller,data);
-    system(youtube_dl_caller);
-
+    
     printf("yt-dlp finished doing it's thing!\n");
 
     strcpy(home, getenv("HOME"));

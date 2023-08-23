@@ -34,7 +34,7 @@ And vlc is used to play it
 ## Why?
 Graphics on a plain tty look awsome!!!!  
 ## Todo:  
-- [ ] Better support for yt-dlp features  
+- [X] Better support for yt-dlp features  
 - [ ] Add somekind of "history" or "save video" mechanic  
 # Credit (for some AWSOME dependencies):
 - youtube-dl && yt-dlp (Its amazing)

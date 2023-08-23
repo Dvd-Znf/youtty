@@ -9,6 +9,12 @@ from os.path import expanduser
 home = expanduser("~")
 kitten_bool = False
 
+if(api_key == "Youtube DATA key goes here!!!"):
+    print('You probably forgot to add a youtube data api key\nYou can still use youtty if you use the --no-key flag')
+    print('This will use yt-dlp ytsearch which will remove some features like: Thumbnail preview, Video Selection, etc...')
+    print('It could also lead to unwanted behaivior\nSo use --no-key at your own risk')
+    exit(1)
+
 history = open(home + "/.youtty/data/history","w")
 kitten = open(home + "/.youtty/data/kitten","r")
 value = kitten.read()
