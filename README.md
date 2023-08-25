@@ -36,6 +36,7 @@ And vlc is used to play it
 Graphics on a plain tty look awsome!!!!  
 ## Todo:  
 - [X] Better support for yt-dlp features  
+- [ ] Provide PKGBUILD for Arch Linux   
 - [ ] Add somekind of "history" or "save video" mechanic  
 # Credit (for some AWSOME dependencies):
 - youtube-dl && yt-dlp (Its amazing)
