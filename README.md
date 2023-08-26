@@ -6,8 +6,31 @@ Youtty is a simple program that combines: Youtube Data API, yt-dlp and vlc to al
 - python  
 - yt-dlp  
 - vlc  
-- make and gcc (Build dependencies)  
-## How to install (from source):
+- make and gcc (Build dependencies)
+## How to install (Arch Linux):
+The youtty program is now available from the AUR!!!   
+https://aur.archlinux.org/packages/youtty    
+If you use an aur helper, then just do that.
+Here are the steps for manual aur install:
+### Step 1:
+Clone the pkgbase
+```
+$ git clone https://aur.archlinux.org/youtty.git
+```
+### Step 2 (optional):
+Verify the that the PKGBUILD is ok
+```
+$ cd youtty
+$ cat PKGBUILD
+```
+### Step 3:
+Build, install and get all dependencies
+```
+$ makepkg -sirc
+```
+### Step 4:
+Check Step 2 from manual install
+## How to manually install:
 ### Step 0:
 Clone this repo :P  
 ### Step 1:
@@ -36,7 +59,8 @@ And vlc is used to play it
 Graphics on a plain tty look awsome!!!!  
 ## Todo:  
 - [X] Better support for yt-dlp features  
-- [ ] Provide PKGBUILD for Arch Linux   
+- [X] Provide PKGBUILD for Arch Linux
+- [X] Added PKGBUILD to the AUR   
 - [ ] Add somekind of "history" or "save video" mechanic  
 # Credit (for some AWSOME dependencies):
 - youtube-dl && yt-dlp (Its amazing)
