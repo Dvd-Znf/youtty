@@ -29,7 +29,7 @@ Build, install and get all dependencies
 $ makepkg -sirc
 ```
 ### Step 4:
-Check Step 2 from manual install
+Check [Step 2](https://github.com/Dvd-Znf/youtty#step-2) from manual install
 ## How to manually install:
 ### Step 0:
 Clone this repo :P  
