@@ -48,7 +48,7 @@ $ chmod +x ./install.sh
 Add your own youtube data api key to the ~/.youtty/key_name.py file  
 Creating a youtube data key is 100% free and very simple   
 You may also use the `--no-key` flag instead, but this will limit some functionality(No video selection, No Thumbnail preview)     
-Using `--no-key` may also lead to some other non desired behaivior, please submit issue if you find and be ready to CTR+C.     
+Using `--no-key` may also lead to some other non desired behavior, please submit issue if you find and be ready to CTR+C.     
 ## How it works?
 The main.c file is really just a glorified script  
 It will call to the api-caller.py file located under ~/.youtty to then asks the youtube data api for a specific search result  
