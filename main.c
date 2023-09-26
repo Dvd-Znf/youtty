@@ -50,6 +50,7 @@ int main(int argc, char *argv[]){
                 strcpy(video_method_target,argv[i+1]);
             } else {
                 printf("\e[91mErr\e[0m: expected some additional argument\n(Please specify a valid vlc output module\n)");
+                return 1;
             }
         } else if(!strcmp(argv[i],"-n") || !strcmp(argv[i],"--no-key")) {
             no_key=true;
