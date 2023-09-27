@@ -59,7 +59,7 @@ And vlc is used to play it
 Graphics on a plain tty look awsome!!!!  
 ## Todo:   
 - [X] Added PKGBUILD to the AUR   
-- [ ] Add somekind of "history" or "save video" mechanic
+- [X] Add somekind of "history" or "save video" mechanic
 - [ ] Consider using mpv instead of vlc   
 # Credit (for some AWSOME dependencies):
 - youtube-dl && yt-dlp (Its amazing)

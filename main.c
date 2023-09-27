@@ -5,10 +5,11 @@
 #include<unistd.h>
 
 
-char target[255],data[12],home[256],video_method_target[255];
+char target[255],data[12],home[256],video_method_target[255],save_video_target[256];
 bool    kitten=false, 
         video_method=false,
-        no_key=false;
+        no_key=false,
+        save_video=false;
 
 FILE *ptrf;
 
@@ -23,6 +24,7 @@ static char helpstr[] = "\n"
                 "		        -v | --version : Print version and exit\n"
                 "		        -V | --vout    : Specify a valid vlc output method\n"
                 "		        -n | --no-key  : Use the ytsearch integreated in yt-dlp instead\n"
+                "		        -s | --save    : Save the downloaded video instead of discarding it\n"
 		    	"\n"
 		    	"Examples:\n"
 		    	"	youtty 'Bad Apple'      	Download and watch Bad Apple!!\n"
@@ -54,6 +56,14 @@ int main(int argc, char *argv[]){
             }
         } else if(!strcmp(argv[i],"-n") || !strcmp(argv[i],"--no-key")) {
             no_key=true;
+        } else if(!strcmp(argv[i],"-s") || !strcmp(argv[i],"--save")) {
+            save_video=true;
+            if(i+1<argc){
+                strcpy(save_video_target,argv[i+1]);
+            } else {
+                printf("\e[91mErr\e[0m: expected some additional argument\n(Please specify a valid path for save video)\n");
+                return 1;
+            }
         } else {
             strcpy(target,argv[i]);
         }
@@ -122,6 +132,13 @@ int main(int argc, char *argv[]){
     if(access(strcat(home,"/.youtty/data/content"),F_OK)!=0){
         printf("\e[91mErr\e[0m: Downloaded video dosen't exist!\n(Maybe yt-dlp failled?)\n");
         exit(1);
+    }
+
+    if(save_video){
+        char cp_call[256] = "cp ~/.youtty/data/content ";
+        strcat(cp_call, save_video_target);
+
+        system("cp_call");
     }
 
     printf("Everything looks good!\nUsing cvlc to view content...\n");
