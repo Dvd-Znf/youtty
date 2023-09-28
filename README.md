@@ -58,7 +58,6 @@ And vlc is used to play it
 ## Why?
 Graphics on a plain tty look awsome!!!!  
 ## Todo:   
-- [X] Added PKGBUILD to the AUR   
 - [X] Add somekind of "history" or "save video" mechanic
 - [ ] Consider using mpv instead of vlc   
 # Credit (for some AWSOME dependencies):
