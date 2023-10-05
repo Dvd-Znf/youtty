@@ -58,7 +58,7 @@ And vlc is used to play it
 ## Why?
 Graphics on a plain tty look awsome!!!!  
 ## Todo:   
-- [X] Consider using mpv instead of vlc (wont work because of aa video mode)
+- Evreything seems done now, :3    
 # Credit (for some AWSOME dependencies):
 - youtube-dl && yt-dlp (Its amazing)
 - vlc (mindblowing)
