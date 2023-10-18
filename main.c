@@ -14,7 +14,7 @@ bool    kitten=false,
 FILE *ptrf;
 
 static char helpstr[] = "\n"
-		    	"Usage: youtty <option> <target>\n"
+		    	"Usage: youtty [OPTION] TARGET\n"
 		    	"\n"
 		    	"Download video from target and they play it via vlc\n"
 		    	"\n"
