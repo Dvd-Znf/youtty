@@ -3,8 +3,9 @@
 Youtty is a simple program that combines: Youtube Data API, yt-dlp and vlc to allow you to easily watch youtube videos from the tty  
 ![Screenshot](/Screenshot.png)  
 ## Dependencies:  
-- python  
-- yt-dlp  
+- python      
+- python-requests (module)       
+- yt-dlp   
 - vlc  
 - make and gcc (Build dependencies)
 ## How to install (Arch Linux):
