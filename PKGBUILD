@@ -1,7 +1,7 @@
 
 # Maintainer: Dvd-Znf <email@dvdznf.xyz>
 pkgname=youtty
-pkgver=0.3.1
+pkgver=0.3.2
 pkgrel=1
 pkgdesc="Search, download and watch any youtube video from the tty"
 arch=('any')
