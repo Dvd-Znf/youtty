@@ -59,7 +59,8 @@ And vlc is used to play it
 ## Why?
 Graphics on a plain tty look awsome!!!!  
 ## Todo:   
-- Consider adopting [this](http://standards.freedesktop.org/basedir-spec/basedir-spec-latest.html) specification regarding the use of data dir      
+- Consider adopting [this](http://standards.freedesktop.org/basedir-spec/basedir-spec-latest.html) specification regarding the use of data dir
+- Ability to change API key directly from the cli    
 # Credit (for some AWSOME dependencies):
 - youtube-dl && yt-dlp (Its amazing)
 - vlc (mindblowing)
