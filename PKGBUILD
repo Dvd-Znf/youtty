@@ -11,7 +11,7 @@ groups=()
 depends=("python" "yt-dlp" "vlc" "python-requests")
 makedepends=("make" "gcc")
 source=("https://github.com/Dvd-Znf/youtty/archive/refs/tags/v$pkgver.tar.gz")
-sha256sums=("60ad38c7555ee9a6e8fe99ee76c1248d192709e4b6852a3d05f909949f42d029")
+sha256sums=("6ddf31cd805652d976675bba2a939af785a9e49224fef8b92048f35697909a7a")
 
 # build() {
 # 	cd "$pkgname-$pkgver"
