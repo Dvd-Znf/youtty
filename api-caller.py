@@ -3,6 +3,8 @@ import json
 import requests
 import key_name
 import subprocess
+import os
+
 
 from key_name import api_key
 from os.path import expanduser
@@ -15,7 +17,16 @@ if(api_key == "Youtube DATA key goes here!!!"):
     print('It could also lead to unwanted behaivior\nSo use --no-key at your own risk')
     exit(1)
 
-history = open(home + "/.youtty/data/history","w")
+
+history_path = os.path.join(home, ".cache/youtty/data/history")
+
+directory = os.path.dirname(history_path)
+if not os.path.exists(directory):
+    os.makedirs(directory)
+
+history = open(history_path, "w")
+
+
 kitten = open(home + "/.youtty/data/kitten","r")
 value = kitten.read()
 if(value == '1'):

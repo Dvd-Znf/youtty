@@ -1,7 +1,7 @@
 #!/bin/bash
 mkdir ~/.youtty
 mkdir ~/.youtty/data
-touch ~/.youtty/data/history
+#touch ~/.youtty/data/history Now using cache dir ~/.cache/youtty
 touch ~/.youtty/data/kitten
 echo "0" > ~/.youtty/data/kitten
 cp ./api-caller.py ~/.youtty/

@@ -59,8 +59,11 @@ And vlc is used to play it
 ## Why?
 Graphics on a plain tty look awsome!!!!  
 ## Todo:   
-- Consider adopting [this](http://standards.freedesktop.org/basedir-spec/basedir-spec-latest.html) specification regarding the use of data dir (Use `~/.cache` instead of `~/.youtty/history` and `~/.youtty/content` idk)
-- Ability to change API key directly from the cli    
+- ~~Consider adopting [this](http://standards.freedesktop.org/basedir-spec/basedir-spec-latest.html) specification regarding the use of data dir (Use `~/.cache` instead of `~/.youtty/history` and `~/.youtty/content` idk)~~      
+    - There is still work here to be done with `kitty` and `content`!!
+- Ability to change API key directly from the cli      
+- Use HINT for error hints       
+- Make the video selection better (Default empty to Yes and allow both lower and upper case)        
 # Credit (for some AWSOME dependencies):
 - youtube-dl && yt-dlp (Its amazing)
 - vlc (mindblowing)

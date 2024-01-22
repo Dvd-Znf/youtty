@@ -101,7 +101,7 @@ int main(int argc, char *argv[]){
 
         system(python_caller);
 
-        ptrf=fopen(strcat(home,"/.youtty/data/history"),"r");
+        ptrf=fopen(strcat(home,"/.cache/youtty/data/history"),"r");
 
         if(ptrf==NULL){
             printf("\e[91mErr\e[0m: Couldn't allocate file pointer!\n(Maybe API query failled?)\n");
