@@ -42,9 +42,12 @@ for i in range(3):
     print(data["items"][i]['snippet']['title'])
     if(kitten_bool):
         subprocess.run(["kitty", "+kitten","icat","--align","left",data["items"][i]['snippet']['thumbnails']['high']['url']])
-    if(input('Does this look right?(Y/n)') == 'Y'):
+    user_input = input('Does this look right?(Y/n)').lower()
+    if not user_input:
+        user_input = 'y'
+    if( user_input == 'y'):
         history.write(data["items"][i]['id']['videoId'] + "\n")
-        history.close
+        history.close()
         break
 #    if(i==3):
 #        print('Err: Please try to specify one of the 3 videos from above (1,2,3) \n or type q to quit and cancel')
