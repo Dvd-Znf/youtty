@@ -33,7 +33,7 @@ static char helpstr[] = "\n"
 
 int main(int argc, char *argv[]){
     if(argc==1){
-        printf("\e[91mErr\e[0m: expected some additional argument\n(You could use -h or --help to see a list)\n");
+        printf("\e[91mErr\e[0m: expected some additional argument\n\e[33mHint\e[0m: You could use -h or --help to see a list\n");
         return(1);
     }
 
@@ -51,7 +51,7 @@ int main(int argc, char *argv[]){
             if(i+1<argc){
                 strcpy(video_method_target,argv[i+1]);
             } else {
-                printf("\e[91mErr\e[0m: expected some additional argument\n(Please specify a valid vlc output module\n)");
+                printf("\e[91mErr\e[0m: expected some additional argument\n\e[33mHint\e[0m: Please specify a valid vlc output module\n)");
                 return 1;
             }
         } else if(!strcmp(argv[i],"-n") || !strcmp(argv[i],"--no-key")) {
@@ -61,7 +61,7 @@ int main(int argc, char *argv[]){
             if(i+1<argc){
                 strcpy(save_video_target,argv[i+1]);
             } else {
-                printf("\e[91mErr\e[0m: expected some additional argument\n(Please specify a valid path for save video)\n");
+                printf("\e[91mErr\e[0m: expected some additional argument\n\e[33mHint\e[0m: Please specify a valid path for save video\n");
                 return 1;
             }
         } else {
@@ -74,7 +74,7 @@ int main(int argc, char *argv[]){
         strcpy(home, getenv("HOME"));
         kitten_ptr=fopen(strcat(home,"/.youtty/data/kitten"),"w");
         if(kitten_ptr==NULL){
-            printf("\e[91mErr\e[0m: Couldn't allocate file pointer!\n(Have you ran the install.sh script?)");
+            printf("\e[91mErr\e[0m: Couldn't allocate file pointer!\n\e[33mHint\e[0m: Have you ran the install.sh script?");
         }
         fprintf(kitten_ptr,"1");
         fclose(kitten_ptr);
@@ -104,12 +104,12 @@ int main(int argc, char *argv[]){
         ptrf=fopen(strcat(home,"/.cache/youtty/data/history"),"r");
 
         if(ptrf==NULL){
-            printf("\e[91mErr\e[0m: Couldn't allocate file pointer!\n(Maybe API query failled?)\n");
+            printf("\e[91mErr\e[0m: Couldn't allocate file pointer!\n\e[33mHint\e[0m: Maybe API query failled?\n");
             exit(1);
         }  
         fseek(ptrf,0,SEEK_END);
         if(ftell(ptrf)==0){
-            printf("\e[91mErr\e[0m: API Caller failed!\n(Maybe you didn't select a video?)\n");
+            printf("\e[91mErr\e[0m: API Caller failed!\n\e[33mHint\e[0m: Maybe you didn't select a video?\n");
             fclose(ptrf);
             exit(1);
         }
@@ -130,7 +130,7 @@ int main(int argc, char *argv[]){
 
     strcpy(home, getenv("HOME"));
     if(access(strcat(home,"/.youtty/data/content"),F_OK)!=0){
-        printf("\e[91mErr\e[0m: Downloaded video dosen't exist!\n(Maybe yt-dlp failled?)\n");
+        printf("\e[91mErr\e[0m: Downloaded video dosen't exist!\n\e[33mHint\e[0m: Maybe yt-dlp failled?\n");
         exit(1);
     }
 

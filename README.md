@@ -63,7 +63,7 @@ Graphics on a plain tty look awsome!!!!
     - There is still work here to be done with `kitty` and `content`!!
     - Could also entirely replace `~/.youtty` (Change where to store the API key)
 - Ability to change API key directly from the cli      
-- Use HINT for error hints
+- ~~Use HINT for error hints~~   
 - Add suport for mpv       
 # Credit (for some AWSOME dependencies):
 - youtube-dl && yt-dlp (Its amazing)
