@@ -84,7 +84,7 @@ int main(int argc, char *argv[]){
         printf("Warning: --no-key flag detected!\nUsing yt-dlp ytsearch instead, this may lead to bad things happening\nBe ready to CTR+C\n");
         system("sleep 1");
 
-        char youtube_dl_caller[255] = "yt-dlp --format mp4 -o ~/.youtty/data/content ytsearch:";
+        char youtube_dl_caller[255] = "yt-dlp --format mp4 -o ~/.cache/youtty/data/content ytsearch:";
         char tmp_data[255] = "'";
         strcat(tmp_data,target);
         strcat(tmp_data,"'");
@@ -119,7 +119,7 @@ int main(int argc, char *argv[]){
 
         printf("Recived data from API\nUsing youtube-dl to temporarly download content\n");
 
-        char youtube_dl_caller[255] = "yt-dlp --format mp4 -o ~/.youtty/data/content https://www.youtube.com/watch?v=";
+        char youtube_dl_caller[255] = "yt-dlp --format mp4 -o ~/.cache/youtty/data/content https://www.youtube.com/watch?v=";
         strcat(youtube_dl_caller,data);
         system(youtube_dl_caller);
 
@@ -129,13 +129,13 @@ int main(int argc, char *argv[]){
     printf("yt-dlp finished doing it's thing!\n");
 
     strcpy(home, getenv("HOME"));
-    if(access(strcat(home,"/.youtty/data/content"),F_OK)!=0){
+    if(access(strcat(home,"/.cache/youtty/data/content"),F_OK)!=0){
         printf("\e[91mErr\e[0m: Downloaded video dosen't exist!\n\e[33mHint\e[0m: Maybe yt-dlp failled?\n");
         exit(1);
     }
 
     if(save_video){
-        char cp_call[256] = "cp ~/.youtty/data/content ";
+        char cp_call[256] = "cp ~/.cache/youtty/data/content ";
         strcat(cp_call, save_video_target);
 
         system("cp_call");
@@ -144,14 +144,14 @@ int main(int argc, char *argv[]){
     printf("Everything looks good!\nUsing cvlc to view content...\n");
 
     if(video_method==false){
-        system("cvlc ~/.youtty/data/content");
-        system("rm ~/.youtty/data/content");
+        system("cvlc ~/.cache/youtty/data/content");
+        system("rm ~/.cache/youtty/data/content");
     } else {
         char output_method[255]="cvlc -V ";
         strcat(output_method,video_method_target);
-        strcat(output_method," ~/.youtty/data/content");
+        strcat(output_method," ~/.cache/youtty/data/content");
         system(output_method);
-        system("rm ~/.youtty/data/content");
+        system("rm ~/.cache/youtty/data/content");
     }
     
 
