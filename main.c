@@ -42,7 +42,7 @@ int main(int argc, char *argv[]){
             printf("%s",helpstr); 
             return 0;
         } else if(!strcmp(argv[i],"-v") || !strcmp(argv[i],"--version")) {
-            printf("youtty version: v0.3.6\n"); 
+            printf("youtty version: v0.3.7\n"); 
             return 0;
         } else if(!strcmp(argv[i],"-k") || !strcmp(argv[i],"--kitty")) {
             kitten=true;
