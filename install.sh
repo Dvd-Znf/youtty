@@ -1,9 +1,9 @@
 #!/bin/bash
-mkdir ~/.youtty
-mkdir ~/.youtty/data
+mkdir ~/.cache/youtty
+mkdir ~/.cache/youtty/data
 #touch ~/.youtty/data/history Now using cache dir ~/.cache/youtty
-touch ~/.youtty/data/kitten
-echo "0" > ~/.youtty/data/kitten
+touch ~/.cache/youtty/data/kitten
+echo "0" > ~/.cache/youtty/data/kitten
 cp ./api-caller.py ~/.youtty/
 cp ./key_name.py ~/.youtty/
 sudo make install

@@ -27,7 +27,7 @@ if not os.path.exists(directory):
 history = open(history_path, "w")
 
 
-kitten = open(home + "/.youtty/data/kitten","r")
+kitten = open(home + "/.cache/youtty/data/kitten","r")
 value = kitten.read()
 if(value == '1'):
     kitten_bool = True
@@ -60,6 +60,6 @@ for i in range(3):
 #            exit()
 
 if(kitten_bool):
-    kitten = open(home + "/.youtty/data/kitten","w")
+    kitten = open(home + "/.cache/youtty/data/kitten","w")
     kitten.write("0")
     kitten.close()

@@ -72,8 +72,8 @@ int main(int argc, char *argv[]){
     if(kitten==true){
         FILE *kitten_ptr;
         strcpy(home, getenv("HOME"));
-        kitten_ptr=fopen(strcat(home,"/.youtty/data/kitten"),"w");
-        if(kitten_ptr==NULL){
+        kitten_ptr=fopen(strcat(home,"/.cache/youtty/data/kitten"),"w"); //Maybe there's a way to create the file if it doesn't exist?
+        if(kitten_ptr==NULL){                                            //It would also need to create parent folders
             printf("\e[91mErr\e[0m: Couldn't allocate file pointer!\n\e[33mHint\e[0m: Have you ran the install.sh script?");
         }
         fprintf(kitten_ptr,"1");
