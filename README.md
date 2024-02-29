@@ -1,4 +1,6 @@
 # youtty
+![GitHub Release](https://img.shields.io/github/v/release/Dvd-Znf/youtty?include_prereleases&logo=GitHub&label=Latest%20release%3A&color=lightgreen)
+![AUR Version](https://img.shields.io/aur/version/youtty?logo=Arch%20Linux&label=Latest%20AUR%20version%3A)
 ## Watch youtube from the tty
 Youtty is a simple program that combines: Youtube Data API, yt-dlp and vlc to allow you to easily watch youtube videos from the tty  
 ![Screenshot](/Screenshot.png)  
