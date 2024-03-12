@@ -92,7 +92,7 @@ int main(int argc, char *argv[]){
         //printf(youtube_dl_caller);
         system(youtube_dl_caller);
     } else {
-        char python_caller[255] = "python ~/.youtty/api-caller.py ";
+        char python_caller[255] = "python ~/.local/share/youtty/api-caller.py ";
         strcpy(home, getenv("HOME"));
 
         strcat(python_caller,"'");
