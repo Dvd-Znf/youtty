@@ -64,7 +64,7 @@ Graphics on a plain tty look awsome!!!!
 - ~~Consider adopting [this](http://standards.freedesktop.org/basedir-spec/basedir-spec-latest.html) specification regarding the use of data dir (Use `~/.cache` instead of `~/.youtty/history` and `~/.youtty/content` idk)~~      
     - ~~There is still work here to be done with `kitty` and `content`!!~~
     - ~~Could also entirely replace `~/.youtty` (Change where to store the API key)~~
-    - Ability to change API key directly from the cli      
+    - ~~Ability to change API key directly from the cli~~      
 - Reorganize repo       
 - Add some version.h idk     
 - Add suport for mpv       

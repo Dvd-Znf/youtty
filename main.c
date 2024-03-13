@@ -6,7 +6,8 @@
 
 
 char target[255],data[12],home[256],video_method_target[255],save_video_target[256];
-bool    kitten=false, 
+bool    change_key=false,
+        kitten=false, 
         video_method=false,
         no_key=false,
         save_video=false;
@@ -19,16 +20,18 @@ static char helpstr[] = "\n"
 		    	"Download video from target and they play it via vlc\n"
 		    	"\n"
 		    	"Posible command options:\n"
-		    	"		        -h | --help    : Display this message\n"
-                "		        -k | --kitty   : Preview thumbnail if you have kitty\n"
-                "		        -v | --version : Print version and exit\n"
-                "		        -V | --vout    : Specify a valid vlc output method\n"
-                "		        -n | --no-key  : Use the ytsearch integreated in yt-dlp instead\n"
-                "		        -s | --save    : Save the downloaded video instead of discarding it\n"
+		    	"		        -h | --help       : Display this message\n"
+                "		        -k | --kitty      : Preview thumbnail if you have kitty\n"
+                "		        -v | --version    : Print version and exit\n"
+                "		        -V | --vout       : Specify a valid vlc output method\n"
+                "		        -n | --no-key     : Use the ytsearch integreated in yt-dlp instead\n"
+                "		        -s | --save       : Save the downloaded video instead of discarding it\n"
+                "		        -c | --change-key : Change the current API key\n"
 		    	"\n"
 		    	"Examples:\n"
-		    	"	youtty 'Bad Apple'      	Download and watch Bad Apple!!\n"
-                "	youtty -V aa 'Bad Apple'	Download and watch Bad Apple!! in ascii art\n"
+		    	"	youtty -c                   Change the current API key\n"
+		    	"	youtty 'Bad Apple'          Download and watch Bad Apple!!\n"
+                "	youtty -V aa 'Bad Apple'    Download and watch Bad Apple!! in ascii art\n"
 		    	"\n";
 
 int main(int argc, char *argv[]){
@@ -44,6 +47,8 @@ int main(int argc, char *argv[]){
         } else if(!strcmp(argv[i],"-v") || !strcmp(argv[i],"--version")) {
             printf("youtty version: v0.3.9\n"); 
             return 0;
+        } else if(!strcmp(argv[i],"-c") || !strcmp(argv[i],"--change-key")) {
+            change_key=true;
         } else if(!strcmp(argv[i],"-k") || !strcmp(argv[i],"--kitty")) {
             kitten=true;
         } else if(!strcmp(argv[i],"-V") || !strcmp(argv[i],"--vout")) {
@@ -69,6 +74,28 @@ int main(int argc, char *argv[]){
         }
     }
     
+    if(change_key==true){
+        char resp[256],py_key[512]="api_key=\"";
+
+        printf("Please enter a valid YouTube data API key:\n");
+        fgets(resp,sizeof(resp),stdin);
+        resp[strcspn(resp, "\n")] = 0;
+
+        strcat(py_key,resp);
+        strcat(py_key,"\"");
+
+        FILE *key_name_file;
+        strcpy(home, getenv("HOME"));
+        key_name_file=fopen(strcat(home,"/.local/share/youtty/key_name.py"),"w");
+        if(key_name_file==NULL){
+            printf("\e[91mErr\e[0m: Couldn't allocate file pointer!\n\e[33mHint\e[0m: Have you ran the install.sh script?");
+        }
+        fprintf(key_name_file,py_key);
+        fclose(key_name_file);
+
+        return 0;
+    }
+
     if(kitten==true){
         FILE *kitten_ptr;
         strcpy(home, getenv("HOME"));

@@ -12,7 +12,8 @@ home = expanduser("~")
 kitten_bool = False
 
 if(api_key == "Youtube DATA key goes here!!!"):
-    print('You probably forgot to add a youtube data api key\nYou can still use youtty if you use the --no-key flag')
+    print('You probably forgot to add a youtube data api key\nYou can change the curent API key by using the --change-key flag')
+    print('You can also still use youtty by passing the --no-key flag')
     print('This will use yt-dlp ytsearch which will remove some features like: Thumbnail preview, Video Selection, etc...')
     print('It could also lead to unwanted behaivior\nSo use --no-key at your own risk')
     exit(1)
