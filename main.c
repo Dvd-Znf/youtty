@@ -4,6 +4,7 @@
 #include<stdbool.h>
 #include<unistd.h>
 
+#include "version.h"
 
 char target[255],data[12],home[256],video_method_target[255],save_video_target[256];
 bool    change_key=false,
@@ -45,7 +46,8 @@ int main(int argc, char *argv[]){
             printf("%s",helpstr); 
             return 0;
         } else if(!strcmp(argv[i],"-v") || !strcmp(argv[i],"--version")) {
-            printf("youtty version: v0.3.9\n"); 
+            printf("youtty version: ");
+            puts(RELEASE_VERSION);
             return 0;
         } else if(!strcmp(argv[i],"-c") || !strcmp(argv[i],"--change-key")) {
             change_key=true;

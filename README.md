@@ -66,7 +66,7 @@ Graphics on a plain tty look awsome!!!!
     - ~~Could also entirely replace `~/.youtty` (Change where to store the API key)~~
     - ~~Ability to change API key directly from the cli~~      
 - Reorganize repo       
-- Add some version.h idk     
+- ~~Add some version.h idk~~     
 - Add suport for mpv       
 # Credit (for some AWSOME dependencies):
 - youtube-dl && yt-dlp (Its amazing)
