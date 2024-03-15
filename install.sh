@@ -6,8 +6,8 @@ touch ~/.cache/youtty/data/kitten
 echo "0" > ~/.cache/youtty/data/kitten
 #mkdir ~/.youtty
 mkdir ~/.local/share/youtty
-cp ./api-caller.py ~/.local/share/youtty
-cp ./key_name.py ~/.local/share/youtty
+cp ./src/api-caller.py ~/.local/share/youtty
+cp ./src/key_name.py ~/.local/share/youtty
 sudo make install
 
 echo "Don't forget to add your API key to ~/.local/share/youtty/key_name.py"

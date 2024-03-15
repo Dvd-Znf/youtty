@@ -1,7 +1,7 @@
 DESTDIR ?= /usr/bin
 
-youtty: main.c
-	gcc main.c -o youtty
+youtty: src/main.c
+	gcc src/main.c -o youtty
 
 
 install: youtty
