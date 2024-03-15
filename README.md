@@ -65,7 +65,7 @@ Graphics on a plain tty look awsome!!!!
     - ~~There is still work here to be done with `kitty` and `content`!!~~
     - ~~Could also entirely replace `~/.youtty` (Change where to store the API key)~~
     - ~~Ability to change API key directly from the cli~~      
-- Reorganize repo       
+- ~~Reorganize repo~~       
 - ~~Add some version.h idk~~     
 - Add suport for mpv       
 # Credit (for some AWSOME dependencies):
