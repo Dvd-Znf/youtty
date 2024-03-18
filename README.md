@@ -68,6 +68,7 @@ Graphics on a plain tty look awsome!!!!
 - ~~Reorganize repo~~       
 - ~~Add some version.h idk~~     
 - Add suport for mpv       
+- See if `install.sh` can be integrated in the Makefile      
 # Credit (for some AWSOME dependencies):
 - youtube-dl && yt-dlp (Its amazing)
 - vlc (mindblowing)
