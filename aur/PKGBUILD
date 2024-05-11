@@ -1,4 +1,3 @@
-
 # Maintainer: Dvd-Znf <email@dvdznf.xyz>
 pkgname=youtty
 pkgver=0.4.0
@@ -21,5 +20,5 @@ sha256sums=("de91e5de14ea4572b3139cb3309b0fb608f6ec56b70196d113dd2ee83b077b3a")
 
 package() {
 	cd "$pkgname-$pkgver"
-	./install.sh
+	make install
 }
