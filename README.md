@@ -36,17 +36,15 @@ Check [Step 2](https://github.com/Dvd-Znf/youtty#step-2) from manual install
 ## How to manually install:
 ### Step 0:
 Clone this repo :P  
+And make sure all depencies are installed
 ### Step 1:
-Run the install.sh script;  
+Just use the Makefile!    
 The automated script will create necessary data directories  
 But it will also compile the main.c file from source
 ```
-$ ./install.sh  
+# make install
 ```
-(You might need to give execute permision to the install script)
-```
-$ chmod +x ./install.sh  
-```
+Just make sure you run `make install` with elevated privligeas 
 ### Step 2:
 Add your own youtube data api key to the ~/.youtty/key_name.py file  
 Creating a youtube data key is 100% free and very simple   
