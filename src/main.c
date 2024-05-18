@@ -172,17 +172,14 @@ int main(int argc, char *argv[]){
 
     printf("Everything looks good!\nUsing cvlc to view content...\n");
 
-    if(video_method==false){
-        system("cvlc ~/.cache/youtty/data/content");
-        system("rm ~/.cache/youtty/data/content");
-    } else {
-        char output_method[255]="cvlc -V ";
+    char output_method[255]="cvlc ";
+    if(video_method==true){
+        strcat(output_method,"-V ");
         strcat(output_method,video_method_target);
-        strcat(output_method," ~/.cache/youtty/data/content");
-        system(output_method);
-        system("rm ~/.cache/youtty/data/content");
     }
-    
+    strcat(output_method," ~/.cache/youtty/data/content");
+    system(output_method);
+    system("rm ~/.cache/youtty/data/content");    
 
 
 
