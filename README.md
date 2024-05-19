@@ -61,7 +61,7 @@ Graphics on a plain tty look awsome!!!!
 ## Todo:   
 - Add suport for mpv       
 - ~~See if `install.sh` can be integrated in the Makefile~~      
-- Add something like a `--no-audio` option      
+- ~~Add something like a `--no-audio` option~~      
 # Credit (for some AWSOME dependencies):
 - youtube-dl && yt-dlp (Its amazing)
 - vlc (mindblowing)

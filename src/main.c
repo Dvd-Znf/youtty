@@ -11,6 +11,7 @@ bool    change_key=false,
         kitten=false, 
         video_method=false,
         no_key=false,
+        no_audio=false,
         save_video=false;
 
 FILE *ptrf;
@@ -26,6 +27,7 @@ static char helpstr[] = "\n"
                 "		        -v | --version    : Print version and exit\n"
                 "		        -V | --vout       : Specify a valid vlc output method\n"
                 "		        -n | --no-key     : Use the ytsearch integreated in yt-dlp instead\n"
+                "		        -N | --no-audio   : Completly disable audio output\n"
                 "		        -s | --save       : Save the downloaded video instead of discarding it\n"
                 "		        -c | --change-key : Change the current API key\n"
 		    	"\n"
@@ -63,6 +65,8 @@ int main(int argc, char *argv[]){
             }
         } else if(!strcmp(argv[i],"-n") || !strcmp(argv[i],"--no-key")) {
             no_key=true;
+        } else if(!strcmp(argv[i],"-N") || !strcmp(argv[i],"--no-audio")) {
+            no_audio=true;
         } else if(!strcmp(argv[i],"-s") || !strcmp(argv[i],"--save")) {
             save_video=true;
             if(i+1<argc){
@@ -176,6 +180,9 @@ int main(int argc, char *argv[]){
     if(video_method==true){
         strcat(output_method,"-V ");
         strcat(output_method,video_method_target);
+    }
+    if(no_audio==true){
+        strcat(output_method," --no-audio");
     }
     strcat(output_method," ~/.cache/youtty/data/content");
     system(output_method);
