@@ -60,7 +60,6 @@ And vlc is used to play it
 Graphics on a plain tty look awsome!!!!  
 ## Todo:   
 - Add suport for mpv       
-- ~~Add something like a `--no-audio` option~~      
 # Credit (for some AWSOME dependencies):
 - youtube-dl && yt-dlp (Its amazing)
 - vlc (mindblowing)
