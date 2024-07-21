@@ -96,7 +96,7 @@ int main(int argc, char *argv[]){
         if(key_name_file==NULL){
             printf("\e[91mErr\e[0m: Couldn't allocate file pointer!\n\e[33mHint\e[0m: Have you ran the install.sh script?");
         }
-        fprintf(key_name_file,py_key);
+        fprintf(key_name_file,"%s", py_key);
         fclose(key_name_file);
 
         return 0;
