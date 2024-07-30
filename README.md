@@ -60,6 +60,7 @@ And vlc is used to play it
 Graphics on a plain tty look awsome!!!!  
 ## Todo:   
 - Add suport for mpv       
+- See if there is a better way to do switch handling   
 # Credit (for some AWSOME dependencies):
 - youtube-dl && yt-dlp (Its amazing)
 - vlc (mindblowing)
