@@ -20,3 +20,8 @@ uninstall: youtty
 
 clean: 
 	rm youtty
+
+debug:
+	gcc -g src/main.c -o youtty
+	gdb youtty
+	rm youtty
