@@ -25,3 +25,4 @@ debug:
 	gcc -g src/main.c -o youtty
 	gdb youtty
 	rm youtty
+	rm ~/.cache/youtty/data/content
