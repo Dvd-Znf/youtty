@@ -23,18 +23,18 @@ static char helpstr[] = "\n"
 		    	"\n"
 		    	"Posible command options:\n"
 		    	"		        -h | --help       : Display this message\n"
-                "		        -k | --kitty      : Preview thumbnail if you have kitty\n"
-                "		        -v | --version    : Print version and exit\n"
-                "		        -V | --vout       : Specify a valid vlc output method\n"
-                "		        -n | --no-key     : Use the ytsearch integreated in yt-dlp instead\n"
-                "		        -N | --no-audio   : Completly disable audio output\n"
-                "		        -s | --save       : Save the downloaded video instead of discarding it\n"
-                "		        -c | --change-key : Change the current API key\n"
+	                "		        -k | --kitty      : Preview thumbnail if you have kitty\n"
+	                "		        -v | --version    : Print version and exit\n"
+	                "		        -V | --vout       : Specify a valid vlc output method\n"
+	                "		        -n | --no-key     : Use the ytsearch integreated in yt-dlp instead\n"
+	                "		        -N | --no-audio   : Completly disable audio output\n"
+	                "		        -s | --save       : Save the downloaded video instead of discarding it\n"
+	                "		        -c | --change-key : Change the current API key\n"
 		    	"\n"
 		    	"Examples:\n"
 		    	"	youtty -c                   Change the current API key\n"
 		    	"	youtty 'Bad Apple'          Download and watch Bad Apple!!\n"
-                "	youtty -V aa 'Bad Apple'    Download and watch Bad Apple!! in ascii art\n"
+	                "	youtty -V aa 'Bad Apple'    Download and watch Bad Apple!! in ascii art\n"
 		    	"\n";
 
 int main(int argc, char *argv[]){
@@ -80,7 +80,7 @@ int main(int argc, char *argv[]){
         }
     }
     
-    if(change_key==true){
+    if(change_key){
         char resp[256],py_key[512]="api_key=\"";
 
         printf("Please enter a valid YouTube data API key:\n");
@@ -102,7 +102,7 @@ int main(int argc, char *argv[]){
         return 0;
     }
 
-    if(kitten==true){
+    if(kitten){
         FILE *kitten_ptr;
         strcpy(home, getenv("HOME"));
         kitten_ptr=fopen(strcat(home,"/.cache/youtty/data/kitten"),"w"); //Maybe there's a way to create the file if it doesn't exist?
@@ -113,7 +113,7 @@ int main(int argc, char *argv[]){
         fclose(kitten_ptr);
     }
 
-    if(no_key==true){
+    if(no_key){
         printf("Warning: --no-key flag detected!\nUsing yt-dlp ytsearch instead, this may lead to bad things happening\nBe ready to CTR+C\n");
         system("sleep 1");
 
@@ -177,11 +177,11 @@ int main(int argc, char *argv[]){
     printf("Everything looks good!\nUsing cvlc to view content...\n");
 
     char output_method[255]="cvlc ";
-    if(video_method==true){
+    if(video_method){
         strcat(output_method,"-V ");
         strcat(output_method,video_method_target);
     }
-    if(no_audio==true){
+    if(no_audio){
         strcat(output_method," --no-audio");
     }
     strcat(output_method," ~/.cache/youtty/data/content");

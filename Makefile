@@ -17,6 +17,7 @@ install: youtty
 
 uninstall: youtty
 	rm -v youtty $(DESTDIR)/youtty
+	rm -rv ~/.cache/youtty/data
 
 clean: 
 	rm youtty
