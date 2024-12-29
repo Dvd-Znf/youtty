@@ -37,9 +37,9 @@ $ makepkg -sirc
 ### Step 4:
 Check [Step 2](https://github.com/Dvd-Znf/youtty#step-2) from manual install
 ## How to manually install:
-> [!IMPORTANT]
-> The version could be unreleased/unstable!
-> (Check to see if it ends in "-dev")
+> [!NOTE]
+> The version could be unreleased/unstable!   
+> _(Check to see if it ends in "-dev")_
 ### Step 0:
 Clone this repo :P  
 And make sure all depencies are installed
