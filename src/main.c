@@ -162,7 +162,7 @@ int main(int argc, char *argv[]){
     printf("yt-dlp finished doing it's thing!\n");
 
     strcpy(home, getenv("HOME"));
-    if(access(strcat(home,"/.cache/youtty/data/content"),F_OK)!=0){
+    if(access(strcat(home,"/.cache/youtty/data/content"),F_OK)){
         printf("\e[91mErr\e[0m: Downloaded video dosen't exist!\n\e[33mHint\e[0m: Maybe yt-dlp failled?\n");
         exit(1);
     }
