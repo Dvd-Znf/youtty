@@ -19,6 +19,9 @@ uninstall: youtty
 	sudo rm -v youtty $(DESTDIR)/youtty
 	rm -rv ~/.cache/youtty/data
 
+reinstall: uninstall 
+	make install
+
 clean: 
 	rm youtty
 
