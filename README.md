@@ -9,7 +9,10 @@ Youtty is a simple program that combines: Youtube Data API, yt-dlp and vlc to al
 - python-requests (module)       
 - yt-dlp   
 - vlc  
-- make and gcc (Build dependencies)
+### Build Dependencies:
+- make   
+- gcc  
+- sudo  
 ## How to install (Arch Linux):
 The youtty program is now available from the AUR!!!   
 https://aur.archlinux.org/packages/youtty    
@@ -34,6 +37,9 @@ $ makepkg -sirc
 ### Step 4:
 Check [Step 2](https://github.com/Dvd-Znf/youtty#step-2) from manual install
 ## How to manually install:
+> [!IMPORTANT]
+> The version could be unreleased/unstable!
+> (Check to see if it ends in "-dev")
 ### Step 0:
 Clone this repo :P  
 And make sure all depencies are installed
@@ -42,14 +48,15 @@ Just use the Makefile!
 The automated script will create necessary data directories  
 But it will also compile the main.c file from source
 ```
-# make install
+$ make install
 ```
-Just make sure you run `make install` with elevated privligeas 
+> [!IMPORTANT]
+> Do _NOT_ run `make install` with elevated privligeas!   
 ### Step 2:
-Add your own youtube data api key to the ~/.youtty/key_name.py file  
-Creating a youtube data key is 100% free and very simple   
+Run `youtty --change-key` once to change your current youtube API key.
+Creating a youtube data API key is free and somewhat simple   
 You may also use the `--no-key` flag instead, but this will limit some functionality(No video selection, No Thumbnail preview)     
-Using `--no-key` may also lead to some other non desired behavior, please submit issue if you find and be ready to CTR+C.     
+Using `--no-key` may also lead to some other non desired behavior, please submit issue if you find one and be ready to CTR+C.     
 ## How it works?
 The main.c file is really just a glorified script  
 It will call to the api-caller.py file located under ~/.youtty to then asks the youtube data api for a specific search result  
@@ -61,7 +68,7 @@ Graphics on a plain tty look awsome!!!!
 ## Todo:   
 - Add suport for mpv       
 # Credit (for some AWSOME dependencies):
-- youtube-dl && yt-dlp (Its amazing)
+- yt-dlp (Its amazing)
 - vlc (mindblowing)
   
 Please open an issue in case you find one  

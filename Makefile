@@ -13,10 +13,10 @@ install: youtty
 	cp ./src/api-caller.py ~/.local/share/youtty
 	cp -n ./src/key_name.py ~/.local/share/youtty
 	echo "Don't forget to add your API key to ~/.local/share/youtty/key_name.py"
-	install youtty $(DESTDIR)/youtty
+	sudo install youtty $(DESTDIR)/youtty
 
 uninstall: youtty
-	rm -v youtty $(DESTDIR)/youtty
+	sudo rm -v youtty $(DESTDIR)/youtty
 	rm -rv ~/.cache/youtty/data
 
 clean: 
