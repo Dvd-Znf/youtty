@@ -51,7 +51,7 @@ But it will also compile the main.c file from source
 $ make install
 ```
 > [!IMPORTANT]
-> Do _NOT_ run `make install` with elevated privligeas!   
+> Do _NOT_ run `make install` with elevated privileges!   
 ### Step 2:
 Run `youtty --change-key` once to change your current youtube API key.
 Creating a youtube data API key is free and somewhat simple   
