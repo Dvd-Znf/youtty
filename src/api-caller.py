@@ -50,15 +50,17 @@ for i in range(3):
         history.write(data["items"][i]['id']['videoId'] + "\n")
         history.close()
         break
-#    if(i==3):
-#        print('Err: Please try to specify one of the 3 videos from above (1,2,3) \n or type q to quit and cancel')
-#        tmp=input()
-#        if(tmp>0 & tmp<3):
-#            history.write(data["items"][i]['id']['videoId'] + "\n")
-#            history.close
-#            break
-#        elif(tmp=='q'):
-#            exit()
+
+print('Err: Please try to specify one of the 3 videos from above (1,2,3) \n or type q to quit and cancel')
+try:
+    tmp=int(input())
+    if(tmp in range(1,4)):
+     history.write(data["items"][tmp-1]['id']['videoId'] + "\n")
+     history.close
+    else:
+     exit()
+except ValueError:
+    exit()
 
 if(kitten_bool):
     kitten = open(home + "/.cache/youtty/data/kitten","w")
